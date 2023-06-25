@@ -31,9 +31,8 @@ class Slider {
 
   addClassAndAttributes() {
     this.images.forEach((image, index) => {
-      image.classList.add(`img-${index + 1}`);
-      image.setAttribute('data-index', index + 1);
-      image.classList.add('hidden'); // to hide the first image that will be applied by fade in effect
+      $(image).addClass(`img-${index + 1}`).attr('data-index', index + 1).addClass('hidden');
+      // to hide the first image that will be applied by fade in effect
 
     });
   }
@@ -73,8 +72,7 @@ class Slider {
     setTimeout(() => {
       this.sliderElement.style.transitionDuration = '0s';
       this.sliderElement.style.transform = 'translateX(0px)';
-      this.sliderElement.appendChild(img);
-
+      $(this.sliderElement).append(img);
 
     }, 300);
 
@@ -82,7 +80,7 @@ class Slider {
 }
 
 const onButtonsClick = (prevBtn, nextBtn, slider1, slider2) => {
-  prevBtn.addEventListener('click', () => {
+  $(prevBtn).click(() => {
     nextBtn.disabled = true;
     prevBtn.disabled = true;
     setTimeout(() => {
@@ -93,8 +91,7 @@ const onButtonsClick = (prevBtn, nextBtn, slider1, slider2) => {
     slider2.onPrevButtonClick();
 
   });
-
-  nextBtn.addEventListener('click', () => {
+  $(nextBtn).click(() => {
     prevBtn.disabled = true;
     nextBtn.disabled = true;
     setTimeout(() => {
