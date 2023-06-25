@@ -1,25 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
-    display:inline-block; 
-    align-items: center;
-    height: 100vh;
-    padding: 50px 0;
-    width: 60%;
-    z-index: 1
+
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    line-height: 1.44;
+    letter-spacing: -0.2px;
+    color: #484a4c;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.256875;
+    color: #134880;
+    background-color: #fafafa;
+    margin-bottom: 20px;
 }
 
 .container {
-    position: relative;
-     padding: 70px 0;
-    overflow: hidden;
-    height: 100%;
+    margin: 0 auto; /* horizontal */
+    max-width: 940px;
+    padding: 40px 0;
+}
+
+.frameText {
+    display: flex;
+    height: 80%;
+    width: 100%;
+    margin-left: -60%;
 }
 
 .wrapper {
-    position: relative
+    position: relative;
+    top: 0;
+    overflow: hidden;
 }
 
-  .images1,
-  .images2 {
+.images1,
+.images2 {
     display: flex;
     justify-content: flex-end;
     transition-timing-function: ease;
@@ -31,31 +53,31 @@ body {
     position: relative
 }
 
-  .images1 img,
-  .images2 img {
+.images1 img,
+.images2 img {
     max-height: 200px;
     margin: 0 10px 10px 0;
     display: block;
     border-radius: 5px
 }
 
-  .images1 img:last-child,
-   .images2 img:last-child {
+.images1 img:last-child,
+.images2 img:last-child {
     position: absolute;
     top: 0;
     left: 100%
 }
 
 .slider-actions {
-    position: absolute;
-    top: 210px;
-    right: 0;
-   
+
+    position: relative;
+    left: 680px;
+    top: -210px;
     height: 100%;
-    right: 0px;
     background-color: #fff;
-    width: 160px;
+    width: 170px;
 }
+
 
 .slider-actions button {
     display: block;
@@ -72,7 +94,8 @@ body {
     position: relative;
     z-index: 1;
     overflow: hidden;
-    transition: border-color .3s ease, transform .3s ease
+    transition: border-color .3s ease, transform .3s ease;
+
 }
 
 .slider-actions button span {
@@ -81,26 +104,53 @@ body {
     justify-content: center;
     width: inherit;
     height: inherit;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    transition: left .3s ease
+    transition: left .3s ease;
+
 }
 
 
 .slider-actions button span:nth-child(2) {
     position: absolute;
-    left: 100%
+    left: 100%;
+
 }
 
 .slider-actions button:hover {
     border-color: #ddd
 }
 
- .slider-actions button:hover span:nth-child(2) {
+.slider-actions button:hover span:nth-child(2) {
     left: 0
 }
+
 .slider-actions button:hover span:nth-child(1) {
-    left: -100%
+    left: -100%;
 }
 
+.textbox {
+    position: relative;
+    z-index: 1;
+    width: 10%;
+    padding-left: 9.5px;
+    padding-right: 9.5px;
+}
+
+.text {
+    width: 400%;
+    padding-left: 9px;
+    display: block;
+    position: relative;
+}
+
+.footer {
+    height: 100px;
+    background-color: #ddd;
+}
+
+.header {
+    height: 100px;
+    background-color: #ddd;
+}

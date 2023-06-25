@@ -33,13 +33,15 @@ class Slider {
     this.images.forEach((image, index) => {
       image.classList.add(`img-${index + 1}`);
       image.setAttribute('data-index', index + 1);
+      image.classList.add('hidden'); // to hide the first image that will be applied by fade in effect
+
     });
   }
 
   getImagesWidth() {
     return this.images.reduce((totalWidth, image) => totalWidth + image.width, 0);
   }
-  
+
 
   onPrevButtonClick() {
     const activeImg = this.sliderElement.querySelector('img.active');
@@ -50,9 +52,11 @@ class Slider {
     this.sliderElement.style.transitionDuration = '.3s';
     this.sliderElement.style.transform = `translateX(${this.position}px)`;
     setTimeout(() => {
+
       this.sliderElement.style.transitionDuration = '0s';
       this.sliderElement.style.transform = 'translateX(0px)';
       this.sliderElement.prepend(img);
+
     }, 300);
   }
 
@@ -64,11 +68,16 @@ class Slider {
     this.position = -activeImg.nextElementSibling.width - 10;
     this.sliderElement.style.transitionDuration = '.3s';
     this.sliderElement.style.transform = `translateX(${this.position}px)`;
+
+    $(activeImg.nextElementSibling).hide().fadeIn(2000);
     setTimeout(() => {
       this.sliderElement.style.transitionDuration = '0s';
       this.sliderElement.style.transform = 'translateX(0px)';
       this.sliderElement.appendChild(img);
+
+
     }, 300);
+
   }
 }
 
@@ -82,6 +91,7 @@ const onButtonsClick = (prevBtn, nextBtn, slider1, slider2) => {
     }, 500);
     slider1.onPrevButtonClick();
     slider2.onPrevButtonClick();
+
   });
 
   nextBtn.addEventListener('click', () => {
@@ -93,6 +103,8 @@ const onButtonsClick = (prevBtn, nextBtn, slider1, slider2) => {
     }, 500);
     slider1.onNextButtonClick();
     slider2.onNextButtonClick();
+
+
   });
 };
 
@@ -116,3 +128,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   onButtonsClick(prevButton, nextButton, slider1, slider2);
 });
+
+
