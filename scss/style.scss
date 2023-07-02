@@ -8,18 +8,17 @@
 
 body {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.44;
   letter-spacing: -0.2px;
   color: $primary-color;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.256875;
   color: $primary-color;
-  background-color: $secondary-color;
   margin-bottom: 20px;
 }
 
@@ -32,14 +31,14 @@ h1 {
 .frameText {
   display: flex;
   height: 80%;
-  width: 100%;
-  margin-left: -60%;
+  width: 120%;
 }
 
 .wrapper {
   position: relative;
   top: 0;
   overflow: hidden;
+  width: 740px; 
 }
 
 .images1,
@@ -72,7 +71,7 @@ h1 {
 
 .slider-actions {
   position: relative;
-  left: 680px;
+  left:570px; 
   top: -210px;
   height: 100%;
   background-color: #fff;
@@ -115,7 +114,7 @@ h1 {
 }
 
 .slider-actions button:hover {
-  border-color: #ddd;
+  border-color: $secondary-color;
 }
 
 .slider-actions button:hover span:nth-child(2) {
@@ -129,24 +128,24 @@ h1 {
 .textbox {
   position: relative;
   z-index: 1;
-  width: 10%;
+  width: 250px;
   padding-left: 9.5px;
   padding-right: 9.5px;
 }
 
 .text {
-  width: 400%;
   padding-left: 9px;
-  display: block;
-  position: relative;
 }
 
 .footer {
   height: 100px;
   background-color: $secondary-color;
+  border-radius: 10px;
 }
 
 .header {
+  border-radius: 10px;
   height: 100px;
-  background-color: $secondary-color;
+  background-color:$secondary-color;
+
 }
